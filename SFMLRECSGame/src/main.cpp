@@ -12,10 +12,10 @@ using namespace sf;
 
 std::random_device rd;
 std::mt19937 gen(rd());
-std::uniform_int_distribution<> hor(0, 600);
-std::uniform_int_distribution<> vert(0, 960);
-std::uniform_int_distribution<> vel(7, 16);
-std::uniform_real_distribution<float> real(0.0, 1.0);
+std::uniform_real_distribution<float> hor (0.0f, 600.0f);
+std::uniform_real_distribution<float> vert(0.0f, 960.0f);
+std::uniform_real_distribution<float> vel (7.0f, 16.0f);
+std::uniform_real_distribution<float> real(0.0f, 1.0f);
 
 float spawn_time = 0.0f;
 
@@ -53,7 +53,7 @@ void InitRock(Entity* e, const sf::Texture& texture, const sf::Texture& explosio
 	e->AddComponent<SpriteComponent>(sf::Sprite(texture, sf::IntRect(0, 0, 64, 64)));
 	e->GetComponent<SpriteComponent>()->sprite.setOrigin(32, 32);
 	e->AddComponent<PositionComponent>(sf::Vector2f(hor(gen), 0));
-	e->AddComponent<VelocityComponent>(sf::Vector2f(0, vel(gen) / M_PI));
+	e->AddComponent<VelocityComponent>(sf::Vector2f(0, vel(gen) / (float)M_PI));
 	e->AddComponent<LifeTimeComponent>(0.0f, 15.0f);
 	e->AddComponent<AnimationComponent>(sf::Vector2u(64, 64), 0.0f, (float)vel(gen), 0.0f);
 	e->AddComponent<CollisionComponent>(24.0f);

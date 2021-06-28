@@ -83,8 +83,8 @@ int main()
 	player_texture.loadFromFile("content/Ship11.png");
 	rock_texture.loadFromFile("content/rock.png");
 	small_rock_texture.loadFromFile("content/rock_small.png");
-	player_explosion_texture.loadFromFile("content/explosions/type_B.png");
-	rock_explosion_texture.loadFromFile("content/explosions/type_B.png");
+	player_explosion_texture.loadFromFile("content/explosions/type_C.png");
+	rock_explosion_texture.loadFromFile("content/explosions/type_C.png");
 
 	OnExplode += [](Entity* e) {
 
